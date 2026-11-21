@@ -1,0 +1,40 @@
+{
+  "_ayuda": "Ajustes técnicos del bot. Las reglas de comportamiento están en config/reglas.md. Modo 'worker' = usa tu Cloudflare Worker (recomendado para publicar). Modo 'clave_propia' = cada visitante pega su propia clave gratuita de Gemini. Modo 'sin_ia' = solo muestra los fragmentos encontrados, sin IA. 'temperatura' en null = no se envía (los modelos Gemini recientes ya no la aceptan); pon un número (0 a 1) solo si tu modelo la admite.",
+
+  "interfaz": {
+    "titulo": "NormaBot SBS",
+    "subtitulo": "Consultas sobre normativa SBS del sistema financiero peruano",
+    "bienvenida": "Hola. Puedo responder consultas sobre la normativa de la SBS aplicable al sistema financiero peruano. Siempre te indicaré la resolución o norma en la que me baso. ¿Qué quieres consultar?",
+    "ejemplos": [
+      "¿Qué normas regulan la Central de Riesgos?",
+      "¿Qué establece la normativa sobre atención al usuario y reclamos?",
+      "¿Cuáles son las categorías de clasificación del deudor?",
+      "¿Qué norma regula la gestión del riesgo operacional?"
+    ],
+    "aviso_legal": "Respuestas informativas generadas con IA a partir del Compendio de Normas SBS. No constituyen asesoría legal. Verifica siempre el texto oficial."
+  },
+
+  "ia": {
+    "modo": "worker",
+    "worker_url": "https://TU-WORKER.TU-USUARIO.workers.dev",
+    "modelo": "gemini-flash-latest",
+    "temperatura": null,
+    "max_tokens_respuesta": 4096,
+    "turnos_de_historial": 4
+  },
+
+  "busqueda": {
+    "fragmentos_por_consulta": 8,
+    "max_fragmentos_por_norma": 3,
+    "puntaje_minimo": 2.0,
+    "priorizar_vigentes": true,
+    "factor_no_vigente": 0.5
+  },
+
+  "citas": {
+    "forzar_lista_de_fuentes": true,
+    "texto_fecha_datos": "Normativa SBS actualizada al {fecha}",
+    "url_detalle_norma": "https://www.sbs.gob.pe/app/pp/INT_CN/Paginas/Busqueda/BusquedaPortal.aspx?normaId={id}",
+    "mensaje_sin_resultados": "No encontré esta información en la normativa SBS indexada. Prueba reformulando la consulta con otros términos o revisa directamente el Compendio de Normas de la SBS."
+  }
+}

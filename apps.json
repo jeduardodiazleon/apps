@@ -1,0 +1,29 @@
+{
+  "_ayuda": "Registro de apps de la portada. Para añadir una app: crea su carpeta en el repositorio y agrega un bloque en 'apps' (el número es el orden de creación). 'familia' debe ser una de las claves de 'familias'. 'estado' puede ser: activa, beta o en_desarrollo.",
+
+  "familias": {
+    "finanzas": { "nombre": "Finanzas y regulación", "color": "#FF8A3D" },
+    "ia":       { "nombre": "Asistentes con IA",      "color": "#41E0A0" },
+    "datos":    { "nombre": "Datos y análisis",       "color": "#FFD84A" },
+    "productividad": { "nombre": "Productividad",     "color": "#FF7DBE" },
+    "herramientas":  { "nombre": "Herramientas",      "color": "#8FD3FF" }
+  },
+
+  "espacios_proximos": 5,
+
+  "apps": [
+    {
+      "numero": 1,
+      "simbolo": "Nb",
+      "nombre": "NormaBot SBS",
+      "resumen": "Responde consultas sobre normativa SBS del sistema financiero peruano.",
+      "descripcion": "Chatbot que busca en el Compendio de Normas de la SBS y responde citando siempre la resolución de origen, con enlace a su ficha oficial y la fecha de actualización de la data.",
+      "familia": "finanzas",
+      "etiquetas": ["Chatbot", "IA", "SBS", "Regulación"],
+      "estado": "activa",
+      "ruta": "normabot-sbs/",
+      "codigo": "https://github.com/jeduardodiazleon/apps/tree/main/normabot-sbs",
+      "fecha": "2026-11"
+    }
+  ]
+}

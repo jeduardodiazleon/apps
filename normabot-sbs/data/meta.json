@@ -1,0 +1,14 @@
+{
+  "actualizado": "2026-11-21T15:35-05:00",
+  "fecha_corte": "21/11/2026",
+  "fecha_texto": null,
+  "sistemas": [
+    "SF"
+  ],
+  "normas": 432,
+  "normas_con_texto": 0,
+  "fragmentos": 0,
+  "archivos_fragmentos": [],
+  "nota": "Catálogo inicial: resoluciones vigentes del Compendio SF, sin texto completo. Ejecuta la acción 'Actualizar normativa SBS' en GitHub para indexar los PDFs.",
+  "fuente": "https://www.sbs.gob.pe/app/pp/INT_CN/Paginas/Busqueda/BusquedaCompendio.aspx"
+}

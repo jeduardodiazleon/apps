@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apps · J. Eduardo Díaz León</title>
+  <meta name="description" content="Colección de apps desarrolladas por J. Eduardo Díaz León: finanzas, regulación, IA, datos y productividad.">
+  <meta property="og:title" content="Tabla de apps de J. Eduardo Díaz León">
+  <meta property="og:description" content="Cada app es un elemento: un problema concreto, resuelto.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232B3AE0'/%3E%3Crect x='6' y='6' width='9' height='9' fill='%23FF8A3D'/%3E%3Crect x='17' y='6' width='9' height='9' fill='%2341E0A0'/%3E%3Crect x='6' y='17' width='9' height='9' fill='%23FFD84A'/%3E%3Crect x='17' y='17' width='9' height='9' fill='%23FF7DBE'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/hub.css">
+</head>
+<body>
+  <a class="saltar" href="#tabla">Ir a las apps</a>
+
+  <header class="cabecera">
+    <a class="firma" href="./">J. Eduardo Díaz León</a>
+    <a class="enlace-gh" href="https://github.com/jeduardodiazleon" target="_blank" rel="noopener">GitHub</a>
+  </header>
+
+  <main>
+    <section class="portada">
+      <h1>Tabla<br>de apps</h1>
+      <p class="bajada">Cada app es un elemento: un problema concreto, resuelto. Elige una para ver qué hace y abrirla.</p>
+    </section>
+
+    <section class="controles" aria-label="Filtrar por familia">
+      <div id="leyenda" class="leyenda" role="group"></div>
+      <p id="conteo" class="conteo" aria-live="polite"></p>
+    </section>
+
+    <section id="tabla" class="tabla" aria-label="Apps"></section>
+  </main>
+
+  <footer class="pie">
+    <p>Diseñadas y construidas por J. Eduardo Díaz León. El número de cada elemento indica el orden en que fue creada.</p>
+  </footer>
+
+  <dialog id="ficha" class="ficha" aria-labelledby="ficha-nombre">
+    <div class="ficha-cuerpo">
+      <button class="cerrar" type="button" aria-label="Cerrar">×</button>
+      <div class="ficha-elemento" aria-hidden="true">
+        <span id="ficha-numero" class="num"></span>
+        <span id="ficha-simbolo" class="sim"></span>
+      </div>
+      <div class="ficha-texto">
+        <p id="ficha-familia" class="ficha-familia"></p>
+        <h2 id="ficha-nombre"></h2>
+        <p id="ficha-descripcion"></p>
+        <ul id="ficha-etiquetas" class="etiquetas"></ul>
+        <div class="ficha-acciones">
+          <a id="ficha-abrir" class="boton-principal" href="#">Abrir app</a>
+          <a id="ficha-codigo" class="boton-secundario" href="#" target="_blank" rel="noopener">Ver código</a>
+        </div>
+        <p id="ficha-meta" class="ficha-meta"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript><p class="sin-js">Activa JavaScript para ver la tabla de apps.</p></noscript>
+  <script src="assets/hub.js"></script>
+</body>
+</html>
