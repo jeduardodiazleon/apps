@@ -2,7 +2,7 @@
 
 Portada y apps publicadas en **https://jeduardodiazleon.github.io/apps/**.
 
-La portada muestra cada app como un elemento de una "tabla periódica". El color indica la familia (finanzas, IA, datos…) y el número, el orden de creación.
+La portada muestra una app destacada en grande y debajo el catálogo completo, con buscador y filtros por categoría.
 
 ## Estructura
 
@@ -24,31 +24,31 @@ Cada app vive en **su propia carpeta** con todo lo que necesita, así que una ap
 3. En un par de minutos estará en `https://jeduardodiazleon.github.io/apps/`.
 
 ## Añadir una nueva app
-1. Crea su carpeta, por ejemplo `mi-nueva-app/`, con su `index.html`.
+1. Crea su carpeta, por ejemplo `mi-nueva-app/`, con su `index.html` (y si quieres una imagen de portada).
 2. Añade un bloque en `apps.json` → `apps`:
 
 ```json
 {
-  "numero": 2,
-  "simbolo": "Ca",
+  "orden": 2,
   "nombre": "Calculadora de cuotas",
   "resumen": "Calcula el cronograma de pagos de un préstamo.",
-  "descripcion": "Texto más largo que aparece al abrir la ficha de la app.",
-  "familia": "finanzas",
+  "categoria": "finanzas",
   "etiquetas": ["Créditos", "Calculadora"],
   "estado": "beta",
+  "destacada": false,
+  "imagen": "mi-nueva-app/portada.webp",
   "ruta": "mi-nueva-app/",
-  "codigo": "https://github.com/jeduardodiazleon/apps/tree/main/mi-nueva-app",
-  "fecha": "2026-12"
+  "codigo": "https://github.com/jeduardodiazleon/apps/tree/main/mi-nueva-app"
 }
 ```
 
-- `simbolo`: una o dos letras, como un elemento químico.
-- `familia`: una de las claves de `familias` (`finanzas`, `ia`, `datos`, `productividad`, `herramientas`). Puedes crear nuevas familias con su nombre y color.
+- `categoria`: una de las claves de `categorias` (`finanzas`, `ia`, `datos`, `productividad`, `herramientas`). Puedes crear más, cada una con su nombre y color.
 - `estado`: `activa`, `beta` o `en_desarrollo`.
-- `espacios_proximos`: cuántas casillas vacías de "Próximamente" se muestran después de la última app.
+- `destacada`: `true` para mostrarla en grande arriba (solo una). Si ninguna lo está, se destaca la última.
+- `imagen`: opcional; sin imagen la tarjeta muestra la inicial de la app.
+- `mostrar_proxima`: muestra u oculta la tarjeta "Próxima app".
 
-Una familia aparece en los filtros cuando tiene al menos una app.
+Las categorías aparecen en los filtros cuando tienen al menos una app.
 
 ## Apps
 | # | App | Carpeta |

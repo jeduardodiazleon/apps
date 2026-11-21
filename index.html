@@ -4,61 +4,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apps · J. Eduardo Díaz León</title>
-  <meta name="description" content="Colección de apps desarrolladas por J. Eduardo Díaz León: finanzas, regulación, IA, datos y productividad.">
-  <meta property="og:title" content="Tabla de apps de J. Eduardo Díaz León">
-  <meta property="og:description" content="Cada app es un elemento: un problema concreto, resuelto.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232B3AE0'/%3E%3Crect x='6' y='6' width='9' height='9' fill='%23FF8A3D'/%3E%3Crect x='17' y='6' width='9' height='9' fill='%2341E0A0'/%3E%3Crect x='6' y='17' width='9' height='9' fill='%23FFD84A'/%3E%3Crect x='17' y='17' width='9' height='9' fill='%23FF7DBE'/%3E%3C/svg%3E">
-  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="description" content="Apps desarrolladas por J. Eduardo Díaz León: finanzas, regulación, IA, datos y productividad.">
+  <meta name="theme-color" content="#0F0A26">
+  <meta property="og:title" content="Apps · J. Eduardo Díaz León">
+  <meta property="og:description" content="Apps de finanzas, regulación, IA y productividad.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230F0A26'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2.5' fill='%2346E07F'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2.5' fill='%238B5CFF'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2.5' fill='%238B5CFF'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2.5' fill='%23FFB547'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/unbounded.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/hub.css">
 </head>
 <body>
-  <a class="saltar" href="#tabla">Ir a las apps</a>
+  <a class="saltar" href="#apps">Ir a las apps</a>
+  <div class="aura" aria-hidden="true"></div>
 
-  <header class="cabecera">
-    <a class="firma" href="./">J. Eduardo Díaz León</a>
-    <a class="enlace-gh" href="https://github.com/jeduardodiazleon" target="_blank" rel="noopener">GitHub</a>
+  <header class="nav">
+    <a class="marca" href="./" aria-label="Inicio">
+      <span class="monograma" aria-hidden="true">JD</span>
+      <span>J. Eduardo Díaz León</span>
+    </a>
+    <a class="nav-gh" href="https://github.com/jeduardodiazleon" target="_blank" rel="noopener">GitHub</a>
   </header>
 
   <main>
-    <section class="portada">
-      <h1>Tabla<br>de apps</h1>
-      <p class="bajada">Cada app es un elemento: un problema concreto, resuelto. Elige una para ver qué hace y abrirla.</p>
+    <section class="hero">
+      <div class="hero-texto">
+        <h1>Apps</h1>
+        <p id="resumen" class="resumen"></p>
+        <label class="buscador">
+          <span class="lupa" aria-hidden="true"></span>
+          <input id="buscar" type="search" placeholder="Buscar una app" aria-label="Buscar una app">
+        </label>
+      </div>
+      <article id="destacada" class="destacada" hidden></article>
     </section>
 
-    <section class="controles" aria-label="Filtrar por familia">
-      <div id="leyenda" class="leyenda" role="group"></div>
-      <p id="conteo" class="conteo" aria-live="polite"></p>
+    <section id="apps" class="catalogo" aria-label="Todas las apps">
+      <div class="barra">
+        <h2>Todas las apps</h2>
+        <div id="filtros" class="filtros" role="group" aria-label="Filtrar por categoría"></div>
+      </div>
+      <div id="rejilla" class="rejilla"></div>
+      <p id="vacio" class="vacio" hidden>Ninguna app coincide con la búsqueda. Prueba con otra palabra o elige otra categoría.</p>
     </section>
-
-    <section id="tabla" class="tabla" aria-label="Apps"></section>
   </main>
 
   <footer class="pie">
-    <p>Diseñadas y construidas por J. Eduardo Díaz León. El número de cada elemento indica el orden en que fue creada.</p>
+    <span>© <span id="anio"></span> J. Eduardo Díaz León</span>
+    <a href="https://github.com/jeduardodiazleon" target="_blank" rel="noopener">github.com/jeduardodiazleon</a>
   </footer>
 
-  <dialog id="ficha" class="ficha" aria-labelledby="ficha-nombre">
-    <div class="ficha-cuerpo">
-      <button class="cerrar" type="button" aria-label="Cerrar">×</button>
-      <div class="ficha-elemento" aria-hidden="true">
-        <span id="ficha-numero" class="num"></span>
-        <span id="ficha-simbolo" class="sim"></span>
-      </div>
-      <div class="ficha-texto">
-        <p id="ficha-familia" class="ficha-familia"></p>
-        <h2 id="ficha-nombre"></h2>
-        <p id="ficha-descripcion"></p>
-        <ul id="ficha-etiquetas" class="etiquetas"></ul>
-        <div class="ficha-acciones">
-          <a id="ficha-abrir" class="boton-principal" href="#">Abrir app</a>
-          <a id="ficha-codigo" class="boton-secundario" href="#" target="_blank" rel="noopener">Ver código</a>
-        </div>
-        <p id="ficha-meta" class="ficha-meta"></p>
-      </div>
-    </div>
-  </dialog>
-
-  <noscript><p class="sin-js">Activa JavaScript para ver la tabla de apps.</p></noscript>
+  <noscript><p class="vacio">Activa JavaScript para ver las apps.</p></noscript>
   <script src="assets/hub.js"></script>
 </body>
 </html>

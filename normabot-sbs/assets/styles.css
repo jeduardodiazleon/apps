@@ -1,0 +1,88 @@
+:root {
+  --fondo: #0F0A26;
+  --panel: rgba(255, 255, 255, .06);
+  --texto: #ECEAF8;
+  --suave: #A49FC4;
+  --borde: rgba(255, 255, 255, .12);
+  --marca: #46E07F;
+  --marca-2: rgba(70, 224, 127, .14);
+  --usuario: #6A3CF0;
+  --ok: #46E07F;
+  --no: #FF8A7A;
+  --radio: 16px;
+  font-family: "Figtree", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  color-scheme: dark;
+}
+@font-face { font-family: "Figtree"; src: url("../../assets/fonts/figtree.woff2") format("woff2-variations"); font-weight: 300 900; font-display: swap; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; color: var(--texto); }
+body { background: radial-gradient(60% 50% at 85% 0%, rgba(106, 60, 240, .35), transparent 70%), radial-gradient(50% 40% at 0% 100%, rgba(70, 224, 127, .16), transparent 70%), var(--fondo); background-attachment: fixed; }
+
+.app { max-width: 880px; margin: 0 auto; height: 100%; display: flex; flex-direction: column; padding: 0 16px; }
+
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 0 12px; border-bottom: 1px solid var(--borde); }
+.marca { display: flex; align-items: center; gap: 12px; }
+.logo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--marca), 0 0 22px rgba(70, 224, 127, .45); }
+h1 { font-size: 1.15rem; margin: 0; }
+header p { margin: 2px 0 0; color: var(--suave); font-size: .85rem; }
+.acciones { display: flex; align-items: center; gap: 8px; }
+.acciones button { border: 1px solid var(--borde); background: var(--panel); color: var(--texto); border-radius: 8px; padding: 6px 10px; cursor: pointer; font: inherit; font-size: .85rem; }
+.volver { font-size: .85rem; color: var(--marca); text-decoration: none; padding: 6px 4px; }
+.volver:hover { text-decoration: underline; }
+.modo { font-size: .75rem; padding: 4px 8px; border-radius: 999px; background: var(--marca-2); color: var(--marca); white-space: nowrap; }
+.modo.sin_ia { color: var(--suave); }
+
+main { flex: 1; overflow-y: auto; padding: 18px 0; display: flex; flex-direction: column; gap: 14px; }
+.msg { max-width: 92%; padding: 12px 16px; border-radius: var(--radio); line-height: 1.5; font-size: .95rem; }
+.msg p { margin: 0 0 8px; } .msg p:last-child { margin-bottom: 0; }
+.msg ul { margin: 4px 0 8px; padding-left: 20px; } .msg li { margin: 3px 0; }
+.msg .h { font-weight: 600; }
+.fila-bot { display: flex; gap: 10px; align-items: flex-start; align-self: flex-start; max-width: 94%; }
+.fila-bot .avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex: none; margin-top: 2px; box-shadow: 0 0 0 1.5px var(--marca); }
+.fila-bot .msg { max-width: 100%; }
+.msg.bot { background: var(--panel); border: 1px solid var(--borde); backdrop-filter: blur(8px); }
+.msg.usuario { background: var(--usuario); color: #fff; align-self: flex-end; }
+.pensando { color: var(--suave); font-style: italic; }
+.error { color: var(--no); }
+.aviso { color: var(--suave); font-size: .8rem; }
+.msg .sello { margin-top: 10px; font-size: .74rem; color: var(--suave); }
+.msg .sello::before { content: "🗓 "; }
+
+a.cita { display: inline-block; min-width: 18px; height: 18px; line-height: 18px; margin: 0 2px; padding: 0 4px; font-size: .7rem; text-align: center;
+  border-radius: 9px; background: var(--marca-2); color: var(--marca); text-decoration: none; vertical-align: super; font-weight: 600; }
+a.cita:hover { background: var(--marca); color: #0F0A26; }
+
+.fuentes { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--borde); font-size: .82rem; }
+.fuentes > p { font-weight: 600; color: var(--suave); margin-bottom: 4px; font-size: .8rem; }
+.fuentes ol { margin: 0; padding-left: 20px; }
+.fuentes li { margin-bottom: 6px; }
+.fuentes a { color: var(--marca); font-weight: 600; }
+.fuentes .sumilla { display: block; color: var(--texto); opacity: .85; }
+.fuentes .metadatos { display: block; color: var(--suave); font-size: .75rem; }
+.fuentes .metadatos.ok::before { content: "● "; color: var(--ok); }
+.fuentes .metadatos.no::before { content: "● "; color: var(--no); }
+
+.ejemplos { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 10px; }
+.ejemplos button { border: 1px solid var(--borde); background: var(--panel); color: var(--texto); border-radius: 999px; padding: 7px 12px; font: inherit; font-size: .82rem; cursor: pointer; }
+.ejemplos button:hover { border-color: var(--marca); color: var(--marca); }
+
+form#formulario { display: flex; gap: 8px; padding: 10px; background: var(--panel); border: 1px solid var(--borde); border-radius: var(--radio); }
+textarea { flex: 1; resize: none; border: 0; outline: 0; background: transparent; color: var(--texto); font: inherit; font-size: .95rem; padding: 6px; max-height: 140px; }
+form#formulario button { border: 0; background: var(--marca); color: #0F0A26; border-radius: 10px; padding: 0 18px; font: inherit; font-weight: 600; cursor: pointer; }
+form#formulario button:disabled { opacity: .5; cursor: wait; }
+
+footer { display: flex; flex-direction: column; gap: 2px; padding: 10px 0 14px; font-size: .72rem; color: var(--suave); text-align: center; }
+
+dialog { border: 1px solid var(--borde); border-radius: var(--radio); background: #1A1338; color: var(--texto); max-width: 440px; width: 92%; }
+dialog h2 { margin-top: 0; font-size: 1.05rem; }
+dialog p { font-size: .88rem; color: var(--suave); }
+dialog a { color: var(--marca); }
+dialog input { width: 100%; padding: 9px 10px; border: 1px solid var(--borde); border-radius: 8px; background: var(--fondo); color: var(--texto); font: inherit; }
+dialog .fila { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+dialog button { border: 0; background: var(--marca); color: #0F0A26; border-radius: 8px; padding: 8px 14px; font: inherit; cursor: pointer; }
+dialog button.secundario { background: transparent; color: var(--texto); border: 1px solid var(--borde); }
+
+@media (max-width: 600px) {
+  header p { display: none; }
+  .msg { max-width: 100%; }
+}

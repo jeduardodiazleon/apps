@@ -1,29 +1,28 @@
 {
-  "_ayuda": "Registro de apps de la portada. Para añadir una app: crea su carpeta en el repositorio y agrega un bloque en 'apps' (el número es el orden de creación). 'familia' debe ser una de las claves de 'familias'. 'estado' puede ser: activa, beta o en_desarrollo.",
+  "_ayuda": "Registro de apps de la portada. Para añadir una app: crea su carpeta y agrega un bloque en 'apps'. 'categoria' debe ser una clave de 'categorias'. 'estado': activa, beta o en_desarrollo. 'destacada': true para mostrarla en grande arriba (si ninguna lo está, se destaca la última). 'imagen' es opcional.",
 
-  "familias": {
-    "finanzas": { "nombre": "Finanzas y regulación", "color": "#FF8A3D" },
-    "ia":       { "nombre": "Asistentes con IA",      "color": "#41E0A0" },
-    "datos":    { "nombre": "Datos y análisis",       "color": "#FFD84A" },
-    "productividad": { "nombre": "Productividad",     "color": "#FF7DBE" },
-    "herramientas":  { "nombre": "Herramientas",      "color": "#8FD3FF" }
+  "categorias": {
+    "finanzas":      { "nombre": "Finanzas y regulación", "color": "#46E07F" },
+    "ia":            { "nombre": "Asistentes con IA",     "color": "#8B5CFF" },
+    "datos":         { "nombre": "Datos y análisis",      "color": "#FFB547" },
+    "productividad": { "nombre": "Productividad",         "color": "#FF6FB5" },
+    "herramientas":  { "nombre": "Herramientas",          "color": "#4FC3FF" }
   },
 
-  "espacios_proximos": 5,
+  "mostrar_proxima": true,
 
   "apps": [
     {
-      "numero": 1,
-      "simbolo": "Nb",
+      "orden": 1,
       "nombre": "NormaBot SBS",
-      "resumen": "Responde consultas sobre normativa SBS del sistema financiero peruano.",
-      "descripcion": "Chatbot que busca en el Compendio de Normas de la SBS y responde citando siempre la resolución de origen, con enlace a su ficha oficial y la fecha de actualización de la data.",
-      "familia": "finanzas",
+      "resumen": "Responde tus consultas sobre normativa SBS del sistema financiero peruano y te dice en qué resolución se basa.",
+      "categoria": "finanzas",
       "etiquetas": ["Chatbot", "IA", "SBS", "Regulación"],
       "estado": "activa",
+      "destacada": true,
+      "imagen": "normabot-sbs/assets/portada.webp",
       "ruta": "normabot-sbs/",
-      "codigo": "https://github.com/jeduardodiazleon/apps/tree/main/normabot-sbs",
-      "fecha": "2026-11"
+      "codigo": "https://github.com/jeduardodiazleon/apps/tree/main/normabot-sbs"
     }
   ]
 }

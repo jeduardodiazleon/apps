@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NormaBot SBS</title>
+  <meta name="description" content="Asistente de consultas sobre normativa SBS del sistema financiero peruano, con cita de la resolución de origen.">
+  <link rel="icon" href="assets/avatar.webp" type="image/webp">
+  <link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230b4f6c%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27Arial%27%3E%C2%A7%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="marca">
+        <img class="logo" src="assets/avatar.webp" alt="" width="48" height="48">
+        <div>
+          <h1 id="titulo">NormaBot SBS</h1>
+          <p id="subtitulo"></p>
+        </div>
+      </div>
+      <div class="acciones">
+        <span id="modo" class="modo"></span>
+        <a class="volver" href="../" title="Ver todas las apps">Todas las apps</a>
+        <button id="nueva" type="button" title="Nueva conversación">Nueva</button>
+        <button id="ajustes" type="button" title="Ajustes de IA" aria-label="Ajustes">⚙</button>
+      </div>
+    </header>
+
+    <main id="mensajes" aria-live="polite"></main>
+
+    <div id="ejemplos" class="ejemplos"></div>
+
+    <form id="formulario" autocomplete="off">
+      <textarea id="entrada" rows="1" placeholder="Escribe tu consulta sobre normativa SBS…" aria-label="Consulta" required></textarea>
+      <button id="enviar" type="submit" aria-label="Enviar">Enviar</button>
+    </form>
+
+    <footer>
+      <span id="base"></span>
+      <span id="aviso-legal"></span>
+    </footer>
+  </div>
+
+  <dialog id="dialogo">
+    <form method="dialog">
+      <h2>Usar tu propia clave de IA</h2>
+      <p>Si el sitio no tiene un servidor de IA configurado, puedes pegar aquí una clave gratuita de Google Gemini
+        (obtenla en <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio</a>).
+        Se guarda solo en este navegador.</p>
+      <input id="clave" type="password" placeholder="Clave de API de Gemini" autocomplete="off">
+      <div class="fila">
+        <button value="cancelar" type="submit" class="secundario">Cancelar</button>
+        <button id="guardar-clave" value="ok" type="submit">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
